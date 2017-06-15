@@ -18,3 +18,11 @@ In this sample app we show how to create a simple and beautiful introduction Pag
 
 <img src="https://github.com/CrossGeeks/Xamarin.Samples/blob/master/Xamarin%20Forms/ScreenShots/IntroductionUISample/introPage.gif" title="IntroductionPage"/>
 
+### Select Multiple Images  
+In this sample app we show how to select multiple images from Gallery in Xamarin Forms  
+
+Android: 
+<img src="https://github.com/CrossGeeks/Xamarin.Samples/blob/master/Xamarin%20Forms/ScreenShots/MultipleImages/multipleImagesDroid.gif" title="MultipleImagesDroid"/>
+
+iOS: 
+<img src="https://github.com/CrossGeeks/Xamarin.Samples/blob/master/Xamarin%20Forms/ScreenShots/MultipleImages/multipleImagesiOS.gif" title="MultipleImagesDroid"/>

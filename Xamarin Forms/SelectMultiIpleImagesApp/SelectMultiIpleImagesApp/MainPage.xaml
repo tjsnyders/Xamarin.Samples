@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="SelectMultiIpleImagesApp.MainPage"
+			 xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+			 xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+	<ContentPage.Content>
+		<StackLayout Padding="20">
+
+		 <Button TextColor="White" BackgroundColor="Blue" Text="Select From Gallery" Clicked="Handle_Clicked"/>
+			
+		 <flv:FlowListView FlowColumnCount="3" x:Name="listItems" 
+						SeparatorVisibility="None"
+						HasUnevenRows="false" RowHeight="100" >
+					<flv:FlowListView.FlowColumnTemplate>
+						<DataTemplate >
+					       <ffimageloading:CachedImage  DownsampleToViewSize="true" AbsoluteLayout.LayoutFlags="All" HeightRequest="100" AbsoluteLayout.LayoutBounds="0,0,1,1" Source="{Binding .}"  Aspect="AspectFill" HorizontalOptions="FillAndExpand">
+					       </ffimageloading:CachedImage>
+						</DataTemplate>
+					</flv:FlowListView.FlowColumnTemplate>
+			</flv:FlowListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
