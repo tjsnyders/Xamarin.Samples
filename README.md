@@ -22,16 +22,23 @@ In this sample app we show how to create a simple and beautiful introduction Pag
 In this sample app we show how to select multiple images from Gallery in Xamarin Forms  
 
 Android: 
+<br>
 <img src="https://github.com/CrossGeeks/Xamarin.Samples/blob/master/Xamarin%20Forms/ScreenShots/MultipleImages/multipleImagesDroid.gif" title="MultipleImagesDroid"/>
-
+<br>
 iOS: 
+<br>
 <img src="https://github.com/CrossGeeks/Xamarin.Samples/blob/master/Xamarin%20Forms/ScreenShots/MultipleImages/multipleImagesiOS.gif" title="MultipleImagesDroid"/>
+<br>
 
 ### Filter Image Sample
 In this sample app we show how to apply different filters to an image in Xamarin Forms  
 
 Android: 
+<br>
 <img src="https://github.com/CrossGeeks/Xamarin.Samples/blob/master/Xamarin%20Forms/ScreenShots/FilterImageSample/FilterImageDroid.gif" title="FilterImageDroid"/>
+<br>
 
 iOS: 
+<br>
 <img src="https://github.com/CrossGeeks/Xamarin.Samples/blob/master/Xamarin%20Forms/ScreenShots/FilterImageSample/FilterImageiOS.gif" title="FilterImageiOS"/>
+<br>
