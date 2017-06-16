@@ -26,3 +26,12 @@ Android:
 
 iOS: 
 <img src="https://github.com/CrossGeeks/Xamarin.Samples/blob/master/Xamarin%20Forms/ScreenShots/MultipleImages/multipleImagesiOS.gif" title="MultipleImagesDroid"/>
+
+### Filter Image Sample
+In this sample app we show how to apply different filters to an image in Xamarin Forms  
+
+Android: 
+<img src="https://github.com/CrossGeeks/Xamarin.Samples/blob/master/Xamarin%20Forms/ScreenShots/FilterImageSample/FilterImageDroid.gif" title="FilterImageDroid"/>
+
+iOS: 
+<img src="https://github.com/CrossGeeks/Xamarin.Samples/blob/master/Xamarin%20Forms/ScreenShots/FilterImageSample/FilterImageiOS.gif" title="FilterImageiOS"/>
