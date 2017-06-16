@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="ImageFilterSample.MainPage"
+			 xmlns:controls="clr-namespace:ImageFilterSample.Controls"
+			 Title="Filter Image Sample">
+	<ContentPage.Content>
+		<StackLayout VerticalOptions="FillAndExpand" Spacing="0">
+
+		  <AbsoluteLayout VerticalOptions="FillAndExpand">
+			<controls:FilterImage OriginalSource="photo.jpg" Source="photo.jpg" SelectFilterCommand="{Binding SelectFilterCommand}" FilterAppliedCommand="{Binding FilterAppliedCommand}" ApplyFilterCommand="{Binding ApplyFilterCommand}"  HorizontalOptions="FillAndExpand"
+					VerticalOptions="FillAndExpand" DownsampleToViewSize="true" x:Name="filterImage"
+				    AbsoluteLayout.LayoutFlags="All"
+				    AbsoluteLayout.LayoutBounds="0,0,1,1"
+				    Aspect="AspectFill"/>
+		    </AbsoluteLayout>
+			
+			<StackLayout  VerticalOptions="End" Spacing="0">
+				<ScrollView Orientation="Horizontal" Padding="0" BackgroundColor="{DynamicResource primary}">
+					<controls:HorizontalList Command="{Binding OnFilterSelectedCommand}" RowSpacing="0" ColumnSpacing="0"
+											  ItemsSource="{Binding Filters}" SelectedItem="{Binding FilterSelected}" 
+											  HeightRequest="120" BackgroundColor="Black">
+							<controls:HorizontalList.ItemTemplate>
+								<DataTemplate>
+									   <StackLayout Margin="5,10,5,10" WidthRequest="68" Padding="20,5,20,5" Spacing="5" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+									     <StackLayout.Triggers>
+										        <DataTrigger TargetType="StackLayout"
+										                     Binding="{Binding IsSelected}"
+										                     Value="True">
+										            <Setter Property="BackgroundColor" Value="Gray" />
+										        </DataTrigger>
+									     </StackLayout.Triggers>
+				
+									     <Label Text="{Binding Name}" Margin="-10,0,-10,0"  HorizontalOptions="Center"
+ 												FontSize="18" TextColor="Black" VerticalOptions="CenterAndExpand" XAlign="Center"/>
+									  </StackLayout>
+								</DataTemplate>
+							</controls:HorizontalList.ItemTemplate>
+					 </controls:HorizontalList>
+			    </ScrollView>
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
