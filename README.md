@@ -42,3 +42,11 @@ iOS:
 <br>
 <img src="https://github.com/CrossGeeks/Xamarin.Samples/blob/master/Xamarin%20Forms/ScreenShots/FilterImageSample/FilterImageiOS.gif" title="FilterImageiOS"/>
 <br>
+
+### Lottie Sample
+In this sample app we show a simple example of how to use Lottie in Xamarin Forms  
+
+<br>
+<img src="https://github.com/CrossGeeks/Xamarin.Samples/blob/master/Xamarin%20Forms/ScreenShots/LottieSample/lottieSample.gif" title="lottieSample"/>
+<br>
+
