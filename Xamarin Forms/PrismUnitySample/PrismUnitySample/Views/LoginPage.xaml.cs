@@ -10,6 +10,7 @@ namespace PrismUnitySample.Views
         public LoginPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

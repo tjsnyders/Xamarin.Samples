@@ -13,7 +13,7 @@
                  IsPassword="true" 
                  HorizontalOptions="FillAndExpand"/>
           <Button Command="{Binding OnLoginCommand}" 
-                  Text="Login" 
+                  Text="Login"  TextColor="White"
                   BackgroundColor="Black" 
                   HorizontalOptions="FillAndExpand"/>
         </StackLayout>

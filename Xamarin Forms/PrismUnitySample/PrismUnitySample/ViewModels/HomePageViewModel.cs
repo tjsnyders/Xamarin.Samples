@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Windows.Input;
+using Prism.Commands;
+using Prism.Common;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
+using PrismUnitySample.Services;
 
 namespace PrismUnitySample.ViewModels
 {
@@ -14,9 +19,25 @@ namespace PrismUnitySample.ViewModels
 		}
 
         INavigationService _navigationService;
-        public HomePageViewModel(INavigationService navigationService)
+        IBatteryService _batteryService;
+        IPageDialogService _pageDialogService;
+
+        public ICommand GetBatteryStatusCommand { get; set; }
+
+        public bool AllFieldsAreValid { get; set; } = true;
+        public HomePageViewModel(INavigationService navigationService, IBatteryService batteryService, IPageDialogService pageDialogService)
         {
             _navigationService = navigationService;
+            _batteryService = batteryService;
+            _pageDialogService = pageDialogService;
+
+			GetBatteryStatusCommand = new DelegateCommand(GetBatteryStatus).ObservesCanExecute(() => AllFieldsAreValid);
+        }
+
+        async void GetBatteryStatus(){
+			var batteryStatus = _batteryService.GetBatteryStatus();
+            await _pageDialogService.DisplayAlertAsync("Battery Status", batteryStatus, "Ok");
+
         }
 
         void INavigatedAware.OnNavigatedFrom(NavigationParameters parameters)

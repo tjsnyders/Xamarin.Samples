@@ -7,12 +7,17 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Prism.Unity;
+using Microsoft.Practices.Unity;
+using PrismUnitySample.Droid.Services;
+using PrismUnitySample.Services;
 
 namespace PrismUnitySample.Droid
 {
     [Activity(Label = "PrismUnitySample.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        static BatteryService batteryService = new BatteryService();
         protected override void OnCreate(Bundle bundle)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -22,7 +27,15 @@ namespace PrismUnitySample.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
-            LoadApplication(new App());
-        }
-    }
+			LoadApplication(new App(new AndroidInitializer()));
+
+		}
+		public class AndroidInitializer : IPlatformInitializer
+		{
+			public void RegisterTypes(IUnityContainer container)
+			{
+				container.RegisterInstance<IBatteryService>(batteryService, new ExternallyControlledLifetimeManager());
+			}
+		}
+	}
 }

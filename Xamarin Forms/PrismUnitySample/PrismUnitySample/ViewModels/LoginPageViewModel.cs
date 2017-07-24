@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Prism.Commands;
+using Prism.Common;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
