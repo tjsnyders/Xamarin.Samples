@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="PrismUnitySample.Views.LoginPage"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              Padding="20">
 	<ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" 
@@ -11,7 +12,12 @@
                  HorizontalOptions="FillAndExpand"/>
           <Entry Placeholder="Password" 
                  IsPassword="true" 
-                 HorizontalOptions="FillAndExpand"/>
+                 HorizontalOptions="FillAndExpand">
+                 <Entry.Behaviors>
+                     <b:EventToCommandBehavior EventName="Completed" 
+                                          Command="{Binding OnLoginCommand}" />
+                 </Entry.Behaviors>
+            </Entry>
           <Button Command="{Binding OnLoginCommand}" 
                   Text="Login"  TextColor="White"
                   BackgroundColor="Black" 

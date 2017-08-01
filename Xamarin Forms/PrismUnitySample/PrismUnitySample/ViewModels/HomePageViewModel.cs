@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using Prism.Commands;
 using Prism.Common;
+using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
@@ -25,8 +26,12 @@ namespace PrismUnitySample.ViewModels
         public ICommand GetBatteryStatusCommand { get; set; }
 
         public bool AllFieldsAreValid { get; set; } = true;
-        public HomePageViewModel(INavigationService navigationService, IBatteryService batteryService, IPageDialogService pageDialogService)
+
+
+        IModuleManager _moduleManager;
+        public HomePageViewModel(IModuleManager moduleManager, INavigationService navigationService, IBatteryService batteryService, IPageDialogService pageDialogService)
         {
+            _moduleManager = moduleManager;
             _navigationService = navigationService;
             _batteryService = batteryService;
             _pageDialogService = pageDialogService;
@@ -35,6 +40,8 @@ namespace PrismUnitySample.ViewModels
         }
 
         async void GetBatteryStatus(){
+
+          //  _moduleManager.LoadModule("AuthenticationModule");
 			var batteryStatus = _batteryService.GetBatteryStatus();
             await _pageDialogService.DisplayAlertAsync("Battery Status", batteryStatus, "Ok");
 

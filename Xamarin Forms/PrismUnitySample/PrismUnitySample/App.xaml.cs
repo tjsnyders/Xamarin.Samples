@@ -1,4 +1,6 @@
-﻿using Prism.Unity;
+﻿using System;
+using Prism.Modularity;
+using Prism.Unity;
 using PrismUnitySample.ViewModels;
 using PrismUnitySample.Views;
 using Xamarin.Forms;
@@ -23,5 +25,18 @@ namespace PrismUnitySample
             Container.RegisterTypeForNavigation<LoginPage, LoginPageViewModel>();
             Container.RegisterTypeForNavigation<HomePage, HomePageViewModel>();
         }
-    }
+
+		protected override void ConfigureModuleCatalog()
+		{
+			Type authenticationModuleType = typeof(AuthenticationModule.AuthenticationModule);
+			ModuleCatalog.AddModule(
+			  new ModuleInfo()
+			  {
+				  ModuleName = authenticationModuleType.Name,
+				  ModuleType = authenticationModuleType,
+                InitializationMode = InitializationMode.OnDemand
+			  });
+		}
+
+	}
 }

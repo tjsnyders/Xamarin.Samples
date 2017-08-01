@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F8CCB828-6B8F-4145-A940-002C0DAF9477}</ProjectGuid>
+    <ProjectGuid>{76BA6124-1C40-4BE6-B6FE-1C08D9602DE4}</ProjectGuid>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UseMSBuildEngine>true</UseMSBuildEngine>
     <OutputType>Library</OutputType>
-    <RootNamespace>PrismUnitySample</RootNamespace>
-    <AssemblyName>PrismUnitySample</AssemblyName>
+    <RootNamespace>AuthenticationModule</RootNamespace>
+    <AssemblyName>AuthenticationModule</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
   </PropertyGroup>
@@ -28,30 +28,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App.xaml" />
-    <EmbeddedResource Include="Views\HomePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\LoginPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="AuthenticationModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\HomePageViewModel.cs" />
-    <Compile Include="Views\HomePage.xaml.cs">
-      <DependentUpon>HomePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
-    <Compile Include="Views\CustomNavigationPage.cs" />
-    <Compile Include="Services\IBatteryService.cs" />
-    <Compile Include="Events\UpdateNavBarEvent.cs" />
+    <Compile Include="Views\RegisterPage.xaml.cs">
+      <DependentUpon>RegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\RegisterPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -83,16 +69,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
-    <Folder Include="Services\" />
-    <Folder Include="Events\" />
+    <EmbeddedResource Include="Views\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RegisterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AuthenticationModule\AuthenticationModule.csproj">
-      <Project>{76BA6124-1C40-4BE6-B6FE-1C08D9602DE4}</Project>
-      <Name>AuthenticationModule</Name>
-    </ProjectReference>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
