@@ -35,6 +35,18 @@
     <EmbeddedResource Include="Views\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Test1Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Test2Page.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CustomMasterDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -52,6 +64,18 @@
     <Compile Include="Views\CustomNavigationPage.cs" />
     <Compile Include="Services\IBatteryService.cs" />
     <Compile Include="Events\UpdateNavBarEvent.cs" />
+    <Compile Include="Views\CustomTabbedPage.xaml.cs">
+      <DependentUpon>CustomTabbedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Test1Page.xaml.cs">
+      <DependentUpon>Test1Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Test2Page.xaml.cs">
+      <DependentUpon>Test2Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomMasterDetailPage.xaml.cs">
+      <DependentUpon>CustomMasterDetailPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
