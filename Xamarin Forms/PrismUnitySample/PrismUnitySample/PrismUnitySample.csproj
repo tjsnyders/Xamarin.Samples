@@ -76,6 +76,8 @@
     <Compile Include="Views\CustomMasterDetailPage.xaml.cs">
       <DependentUpon>CustomMasterDetailPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\CustomMasterDetailPageViewModel.cs" />
+    <Compile Include="ViewModels\Test1PageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
